@@ -11,106 +11,36 @@
     <link rel="stylesheet" href="https://editor.silex.me/static/2.7/normalize.css" data-silex-static="">
     <link rel="stylesheet" href="https://editor.silex.me/static/2.7/front-end.css" data-silex-static="">
 
-    <style type="text/css" class="silex-style">body,
-html {height: 100%;}.bg {background-image: url("https://i.pinimg.com/originals/9b/cc/d2/9bccd2ab225f029fd6751fafbbdb3137.jpg")'undefined; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;}</style>
-    <script type="text/javascript" class="silex-script"></script>
+    <style type="text/css" class="silex-style">A {COLOR: #0000ff; TEXT-DECORATION: none;}</style>
+    <script type="text/javascript" class="silex-script"> 
+
+function clockon() {
+ thistime= new Date()
+ var hours=thistime.getHours()
+ var minutes=thistime.getMinutes()
+ var seconds=thistime.getSeconds()
+ if (eval(hours) <10) {hours="0"+hours}
+ if (eval(minutes) < 10) {minutes="0"+minutes}
+ if (seconds < 10) {seconds="0"+seconds}
+ thistime = hours+":"+minutes+":"+seconds
+ bgclocknoshade.innerHTML=thistime
+ var timer=setTimeout("clockon()",200)
+}
+
+// - End of JavaScript - -->
+
+
+</script>
     <style class="silex-inline-styles" type="text/css">.body-initial {background-color: rgba(255,255,255,1);}.silex-id-1478366444112-1 {top: 100px; background-color: transparent; min-height: 100px;}.silex-id-1478366444112-0 {min-height: 100px; background-color: transparent; width: 1200px;}.silex-id-1478366450713-3 {top: 100px; background-color: transparent;}.silex-id-1478366450713-2 {min-height: 100px; background-color: transparent; width: 1200px;}</style>
     <title></title>
     <script type="text/json" class="silex-json-styles">[{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621032-2":{"min-height":"600px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366444112-1":{"top":"100px","background-color":"transparent","min-height":"100px","left":"","height":""},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366450713-3":{"top":"100px","background-color":"transparent"}},"mobile":{},"prodotypeData":{"component":{},"style":{"all-style":{"className":"all-style","templateName":"text","displayName":"All style","styles":{"desktop":{"normal":{"className":"all-style","pseudoClass":"normal"}}}}}}}]</script>
 
     
-<style class="silex-prodotype-style" type="text/css" data-style-id="all-style"></style><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport=""><!-- Silex HEAD tag do not remove --><script language="JavaScript">
-<!-- 
-
-var now
-
-var second
-var minute
-var hour
-
-var degreeSecond
-var degreeMinute
-var degreeHour
-
-var timer
-var stepDegree=6
-var stepDegreeHour=30
-
-function checkTime() {
- if (document.all) {
-  now=new Date()
-  second=now.getSeconds()
-  minute=now.getMinutes()
-  hour=now.getHours()
-  if (hour>=12) {hour=hour-12}
-  spinIt()
-  timer=setTimeout("checkTime()",200)
- }
-}
-
-function spinIt() {
- window.status=hour
- secondObj.SetIdentity()
- minuteObj.SetIdentity()
- hourObj.SetIdentity()
- 
- degreeSecond=180+stepDegree*second
- degreeMinute=180+stepDegree*minute
- degreeHour=180+stepDegreeHour*hour+(Math.floor(stepDegree*minute/12))
- 
- secondObj.Rotate(0,0,degreeSecond)
- minuteObj.Rotate(0,0,degreeMinute)
- hourObj.Rotate(0,0,degreeHour)
-}
-
-// - End of JavaScript - -->
-</script>
-
-</head>
-<body onload="checkTime()" data-silex-id="body-initial" class="body-initial all-style enable-mobile silex-runtime" data-silex-type="container">
-
-<div style="position:absolute;top:40px;left:40px">
-
-<div style="position:absolute;top:0px;left:0px">
-<img src="bgclock.gif">
-</div>
-
-<div style="position:absolute;top:0px;left:0px">
-<object id="secondObj" style="width:100px;height:102px" classid="CLSID:369303C2-D7AC-11D0-89D5-00A0C90833E6">
-<param name="HighQuality" value="1">
-<param name="Line0001" value="SetFillStyle(1)">
-<param name="Line0002" value="SetLineColor(80,20,20)">
-<param name="Line0003" value="SetFillColor(80,20,20)">
-<param name="Line0004" value="Rect(0,0,1,32)">
-</object>
-</div>
-
-<div style="position:absolute;top:0px;left:0px">
-<object id="minuteObj" style="width:100px;height:102px" classid="CLSID:369303C2-D7AC-11D0-89D5-00A0C90833E6">
-<param name="HighQuality" value="1">
-<param name="Line0001" value="SetFillStyle(1)">
-<param name="Line0002" value="SetLineColor(50,50,50)">
-<param name="Line0003" value="SetFillColor(50,50,50)">
-<param name="Line0004" value="Rect(0,0,1,30)">
-</object>
-</div>
-
-<div style="position:absolute;top:0px;left:0px">
-<object id="hourObj" style="width:100px;height:102px" classid="CLSID:369303C2-D7AC-11D0-89D5-00A0C90833E6">
-<param name="HighQuality" value="1">
-<param name="Line0001" value="SetFillStyle(1)">
-<param name="Line0002" value="SetLineColor(50,50,50)">
-<param name="Line0003" value="SetFillColor(50,50,50)">
-<param name="Line0004" value="Rect(0,0,1,16)">
-</object>
-</div>
-</div>
-
-<div style="position:absolute;top:20px;left:200px;fomnt-family:Verdana;font-size:8pt;color:444444;text-align:center;width:200px;letter-spacing:0.6em;line-height:200%;">
-<span style="color:551111">Øâåéöàðñêèå ÷àñû<br>Edition Alpha Y2</span><br><i>by </i>Dudli&amp;Gehrig
-<a href="http://case.agava.ru" target="_blank" style="color:551111">Download zip-file</a> images and instructions included
-</div>
-<!-- End of Silex HEAD tag do not remove -->
+<style class="silex-prodotype-style" type="text/css" data-style-id="all-style"></style><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport=""><!-- Silex HEAD tag do not remove --></head><body data-silex-id="body-initial" class="body-initial all-style enable-mobile silex-runtime" data-silex-type="container"><div id="bgclockshade" style="FONT-SIZE: 120px; LEFT: 12px; VISIBILITY: visible; COLOR: #ff8888; FONT-FAMILY: Verdana; POSITION: absolute; TOP: 152px"></div>
+<div id="bgclockshade" style="FONT-SIZE: 120px; LEFT: 12px; VISIBILITY: visible; COLOR: #ff8888; FONT-FAMILY: Verdana; POSITION: absolute; TOP: 152px"></div>
+<div id="bgclocknoshade" style="FONT-SIZE: 120px; LEFT: 10px; VISIBILITY: visible; COLOR: #dddddd; FONT-FAMILY: Verdana; POSITION: absolute; TOP: 150px"></div>
+<div id="mainbody" style="VISIBILITY: visible; POSITION: absolute">
+<h3><nobr>Background Clock</nobr></h3></div><!-- End of Silex HEAD tag do not remove -->
 
 
     <div class="silex-pages">
