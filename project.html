@@ -12,16 +12,31 @@
     <link rel="stylesheet" href="https://editor.silex.me/static/2.7/front-end.css" data-silex-static="">
 
     <style type="text/css" class="silex-style"></style>
-    <script type="text/javascript" class="silex-script"></script>
+    <script type="text/javascript" class="silex-script">function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
+    return i;
+}</script>
     <style class="silex-inline-styles" type="text/css"></style>
     <title></title>
     <script type="text/json" class="silex-json-styles">[{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"top":"5px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"600px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1478366444112-0":{"min-height":"448px","background-color":"transparent","width":"1192px","top":"15px","left":"104px","height":""},"silex-id-1478366444112-1":{"top":"100px","background-color":"transparent","left":"","height":"","min-width":"1192px"},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366450713-3":{"top":"100px","background-color":"transparent"}},"mobile":{},"prodotypeData":{"component":{},"style":{"all-style":{"className":"all-style","templateName":"text","displayName":"All style","styles":{"desktop":{"normal":{"className":"all-style","pseudoClass":"normal"}}}}}}}]</script>
 
     
 <style class="silex-prodotype-style" type="text/css" data-style-id="all-style"></style><!-- Silex HEAD tag do not remove -->
-    </head><body style="background-color:	#696969;" class="silex-runtime">
+    </head><body style="background-color:	#696969;" onload="startTime()" class="silex-runtime">
    <nav>
        <ul>
+           
            <a href="https://open.spotify.com/browse/featured?_ga=2.39741664.296223971.1535240211-1056925602.1532196970&amp;_gac=1.84019691.1532197406.CjwKCAjws8vaBRBFEiwAQfhs-FRBAqRJEkU3nSeusma2hMtr5LzDCDInx8SpvpdbmBh3fyhoH0nAcxoCiQ0QAvD_BwE"><img src="http://www.corkoperahouse.ie/wp-content/uploads/2017/09/spotify-logo.png" alt="spotify logo" height="150" width="195"></a>
             <a href="https://www.youtube.com/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_A2E6mgHSBk4oSKCjScbq43zKvwK1sXB2Yh_XzwrJFbHv29vhQ" alt="youtube pic" height="150" width="420"></a>
             <a href="nav.html"><img src="https://lumiron.com/wp-content/uploads/2017/06/led-revolution.jpg" alt="led" height="150" width="270"></a>
