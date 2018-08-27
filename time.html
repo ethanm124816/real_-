@@ -11,36 +11,53 @@
     <link rel="stylesheet" href="https://editor.silex.me/static/2.7/normalize.css" data-silex-static="">
     <link rel="stylesheet" href="https://editor.silex.me/static/2.7/front-end.css" data-silex-static="">
 
-    <style type="text/css" class="silex-style">A {COLOR: #0000ff; TEXT-DECORATION: none;}</style>
-    <script type="text/javascript" class="silex-script"> 
+    <style type="text/css" class="silex-style"></style>
+    <script type="text/javascript" class="silex-script">document.addEventListener('DOMContentLoaded', () =>
+  requestAnimationFrame(updateTime)
+)
 
-function clockon() {
- thistime= new Date()
- var hours=thistime.getHours()
- var minutes=thistime.getMinutes()
- var seconds=thistime.getSeconds()
- if (eval(hours) <10) {hours="0"+hours}
- if (eval(minutes) < 10) {minutes="0"+minutes}
- if (seconds < 10) {seconds="0"+seconds}
- thistime = hours+":"+minutes+":"+seconds
- bgclocknoshade.innerHTML=thistime
- var timer=setTimeout("clockon()",200)
-}
-
-// - End of JavaScript - -->
-
-
-</script>
-    <style class="silex-inline-styles" type="text/css">.body-initial {background-color: rgba(255,255,255,1);}.silex-id-1478366444112-1 {top: 100px; background-color: transparent; min-height: 100px;}.silex-id-1478366444112-0 {min-height: 100px; background-color: transparent; width: 1200px;}.silex-id-1478366450713-3 {top: 100px; background-color: transparent;}.silex-id-1478366450713-2 {min-height: 100px; background-color: transparent; width: 1200px;}</style>
+function updateTime() {
+  document.documentElement.style.setProperty('--timer-day', "'" + moment().format("dd") + "'");
+  document.documentElement.style.setProperty('--timer-hours', "'" + moment().format("k") + "'");
+  document.documentElement.style.setProperty('--timer-minutes', "'" + moment().format("mm") + "'");
+  document.documentElement.style.setProperty('--timer-seconds', "'" + moment().format("ss") + "'");
+  requestAnimationFrame(updateTime);
+}</script>
+    <style class="silex-inline-styles" type="text/css">.body-initial {background-color: rgba(255,255,255,1);}.silex-id-1478366444112-1 {top: 100px; background-color: transparent; min-height: 100px;}.silex-id-1478366444112-0 {min-height: 100px; background-color: transparent; width: 1200px;}.silex-id-1474394621033-3 {top: 5px; left: 0px;}.silex-id-1474394621032-2 {min-height: 600px; background-color: transparent; width: 1200px;}.silex-id-1478366450713-3 {top: 100px; background-color: transparent;}.silex-id-1478366450713-2 {min-height: 100px; background-color: transparent; width: 1200px;}.silex-id-1442914737143-3 {min-height: 53px; width: 349px; top: 29px; left: 430px;}</style>
     <title></title>
-    <script type="text/json" class="silex-json-styles">[{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621032-2":{"min-height":"600px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366444112-1":{"top":"100px","background-color":"transparent","min-height":"100px","left":"","height":""},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366450713-3":{"top":"100px","background-color":"transparent"}},"mobile":{},"prodotypeData":{"component":{},"style":{"all-style":{"className":"all-style","templateName":"text","displayName":"All style","styles":{"desktop":{"normal":{"className":"all-style","pseudoClass":"normal"}}}}}}}]</script>
+    <script type="text/json" class="silex-json-styles">[{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"top":"5px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"600px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"53px","width":"349px","top":"29px","left":"430px","height":""},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366444112-1":{"top":"100px","background-color":"transparent","min-height":"100px","left":"","height":""},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366450713-3":{"top":"100px","background-color":"transparent"}},"mobile":{},"prodotypeData":{"component":{},"style":{"all-style":{"className":"all-style","templateName":"text","displayName":"All style","styles":{"desktop":{"normal":{"className":"all-style","pseudoClass":"normal"}}}}}}}]</script>
 
     
-<style class="silex-prodotype-style" type="text/css" data-style-id="all-style"></style><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport=""><!-- Silex HEAD tag do not remove --></head><body data-silex-id="body-initial" class="body-initial all-style enable-mobile silex-runtime" data-silex-type="container"><div id="bgclockshade" style="FONT-SIZE: 120px; LEFT: 12px; VISIBILITY: visible; COLOR: #ff8888; FONT-FAMILY: Verdana; POSITION: absolute; TOP: 152px"></div>
-<div id="bgclockshade" style="FONT-SIZE: 120px; LEFT: 12px; VISIBILITY: visible; COLOR: #ff8888; FONT-FAMILY: Verdana; POSITION: absolute; TOP: 152px"></div>
-<div id="bgclocknoshade" style="FONT-SIZE: 120px; LEFT: 10px; VISIBILITY: visible; COLOR: #dddddd; FONT-FAMILY: Verdana; POSITION: absolute; TOP: 150px"></div>
-<div id="mainbody" style="VISIBILITY: visible; POSITION: absolute">
-<h3><nobr>Background Clock</nobr></h3></div><!-- End of Silex HEAD tag do not remove -->
+<style class="silex-prodotype-style" type="text/css" data-style-id="all-style"></style><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport=""><!-- Silex HEAD tag do not remove --></head><body data-silex-id="body-initial" class="body-initial all-style enable-mobile silex-runtime" data-silex-type="container"><div class="clock-container">
+  <div class="clock-col">
+    <p class="clock-day clock-timer">
+    </p>
+    <p class="clock-label">
+      Day
+    </p>
+  </div>
+  <div class="clock-col">
+    <p class="clock-hours clock-timer">
+    </p>
+    <p class="clock-label">
+      Hours
+    </p>
+  </div>
+  <div class="clock-col">
+    <p class="clock-minutes clock-timer">
+    </p>
+    <p class="clock-label">
+      Minutes
+    </p>
+  </div>
+  <div class="clock-col">
+    <p class="clock-seconds clock-timer">
+    </p>
+    <p class="clock-label">
+      Seconds
+    </p>
+  </div>
+</div><!-- End of Silex HEAD tag do not remove -->
 
 
     <div class="silex-pages">
@@ -61,11 +78,18 @@ function clockon() {
     <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1478366444112-1 section-element" data-silex-id="silex-id-1478366444112-1" style="">
         <div data-silex-type="container" class="editable-style silex-element-content silex-id-1478366444112-0 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1478366444112-0"></div>
     </div>
-    
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1474394621033-3 section-element" data-silex-id="silex-id-1474394621033-3" style="">
+        <div data-silex-type="container" class="editable-style silex-element-content silex-id-1474394621032-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1474394621032-2"></div>
+    </div>
     <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1478366450713-3 section-element" data-silex-id="silex-id-1478366450713-3" style="">
         <div data-silex-type="container" class="editable-style silex-element-content silex-id-1478366450713-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1478366450713-2">
 
-            
+            <div data-silex-id="silex-id-1442914737143-3" class="editable-style silex-id-1442914737143-3 text-element" data-silex-type="text" style="">
+                <div class="silex-element-content normal">
+                    <br>
+                    <div style="text-align: center;"><a href="//www.silex.me/">Powered by Silex</a></div>
+                </div>
+            </div>
         </div>
     </div>
 
