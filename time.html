@@ -19,27 +19,98 @@ html {height: 100%;}.bg {background-image: url("https://i.pinimg.com/originals/9
     <script type="text/json" class="silex-json-styles">[{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621032-2":{"min-height":"600px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366444112-1":{"top":"100px","background-color":"transparent","min-height":"100px","left":"","height":""},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px","top":"","left":"","height":""},"silex-id-1478366450713-3":{"top":"100px","background-color":"transparent"}},"mobile":{},"prodotypeData":{"component":{},"style":{"all-style":{"className":"all-style","templateName":"text","displayName":"All style","styles":{"desktop":{"normal":{"className":"all-style","pseudoClass":"normal"}}}}}}}]</script>
 
     
-<style class="silex-prodotype-style" type="text/css" data-style-id="all-style"></style><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport=""><!-- Silex HEAD tag do not remove --></head><body data-silex-id="body-initial" class="body-initial all-style enable-mobile silex-runtime" data-silex-type="container">
-    <script language="JavaScript">
-<!-- Original:  Robert Ison -->
-<!-- Web Site:  http://www.infosourcetraining.com -->
+<style class="silex-prodotype-style" type="text/css" data-style-id="all-style"></style><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport=""><!-- Silex HEAD tag do not remove --><script language="JavaScript">
+<!-- 
 
+var now
 
+var second
+var minute
+var hour
 
-<!-- Begin
-datetoday = new Date();
-timenow=datetoday.getTime();
-datetoday.setTime(timenow);
-thehour = datetoday.getHours();
-if (thehour > 18) display = "Evening";
-else if (thehour >12) display = "Afternoon";
-else display = "Morning";
-var greeting = ("Good " + display + "!");
-document.write(greeting);
-//  End -->
+var degreeSecond
+var degreeMinute
+var degreeHour
+
+var timer
+var stepDegree=6
+var stepDegreeHour=30
+
+function checkTime() {
+ if (document.all) {
+  now=new Date()
+  second=now.getSeconds()
+  minute=now.getMinutes()
+  hour=now.getHours()
+  if (hour>=12) {hour=hour-12}
+  spinIt()
+  timer=setTimeout("checkTime()",200)
+ }
+}
+
+function spinIt() {
+ window.status=hour
+ secondObj.SetIdentity()
+ minuteObj.SetIdentity()
+ hourObj.SetIdentity()
+ 
+ degreeSecond=180+stepDegree*second
+ degreeMinute=180+stepDegree*minute
+ degreeHour=180+stepDegreeHour*hour+(Math.floor(stepDegree*minute/12))
+ 
+ secondObj.Rotate(0,0,degreeSecond)
+ minuteObj.Rotate(0,0,degreeMinute)
+ hourObj.Rotate(0,0,degreeHour)
+}
+
+// - End of JavaScript - -->
 </script>
 
+</head>
+<body onload="checkTime()" data-silex-id="body-initial" class="body-initial all-style enable-mobile silex-runtime" data-silex-type="container">
 
+<div style="position:absolute;top:40px;left:40px">
+
+<div style="position:absolute;top:0px;left:0px">
+<img src="bgclock.gif">
+</div>
+
+<div style="position:absolute;top:0px;left:0px">
+<object id="secondObj" style="width:100px;height:102px" classid="CLSID:369303C2-D7AC-11D0-89D5-00A0C90833E6">
+<param name="HighQuality" value="1">
+<param name="Line0001" value="SetFillStyle(1)">
+<param name="Line0002" value="SetLineColor(80,20,20)">
+<param name="Line0003" value="SetFillColor(80,20,20)">
+<param name="Line0004" value="Rect(0,0,1,32)">
+</object>
+</div>
+
+<div style="position:absolute;top:0px;left:0px">
+<object id="minuteObj" style="width:100px;height:102px" classid="CLSID:369303C2-D7AC-11D0-89D5-00A0C90833E6">
+<param name="HighQuality" value="1">
+<param name="Line0001" value="SetFillStyle(1)">
+<param name="Line0002" value="SetLineColor(50,50,50)">
+<param name="Line0003" value="SetFillColor(50,50,50)">
+<param name="Line0004" value="Rect(0,0,1,30)">
+</object>
+</div>
+
+<div style="position:absolute;top:0px;left:0px">
+<object id="hourObj" style="width:100px;height:102px" classid="CLSID:369303C2-D7AC-11D0-89D5-00A0C90833E6">
+<param name="HighQuality" value="1">
+<param name="Line0001" value="SetFillStyle(1)">
+<param name="Line0002" value="SetLineColor(50,50,50)">
+<param name="Line0003" value="SetFillColor(50,50,50)">
+<param name="Line0004" value="Rect(0,0,1,16)">
+</object>
+</div>
+</div>
+
+<div style="position:absolute;top:20px;left:200px;fomnt-family:Verdana;font-size:8pt;color:444444;text-align:center;width:200px;letter-spacing:0.6em;line-height:200%;">
+<span style="color:551111">Øâåéöàðñêèå ÷àñû<br>Edition Alpha Y2</span><br><i>by </i>Dudli&amp;Gehrig
+<a href="http://case.agava.ru" target="_blank" style="color:551111">Download zip-file</a> images and instructions included
+</div>
+<!-- End of Silex HEAD tag do not remove -->
 
 
     <div class="silex-pages">
@@ -83,4 +154,4 @@ document.write(greeting);
 
 
 
-</body><!-- End of Silex HEAD tag do not remove --></html>
+</body></html>
